@@ -75,7 +75,7 @@ public class InputFile implements Closeable {
 
 
   private static String determineRelativePath(File inputPath, File inputFile) {
-    Path relative = inputFile.toPath().relativize(inputPath.toPath()); // inputPath.toPath().relativize(inputFile.getParentFile().toPath());
+    Path relative = inputFile.toPath().relativize(inputPath.getParentFile().toPath()); // inputPath.toPath().relativize(inputFile.getParentFile().toPath());
     String subDir = relative.toString();
     if ("".equals(subDir)) {
       return null;
